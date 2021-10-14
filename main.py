@@ -15,67 +15,55 @@ with open('password.txt', 'r') as f:
         print("Correct password")
         pt = 1
 
-def rolldice():
-    return random.randint(1,6)
-
-def playerRollDice(player,player1Sc,player2Sc):
-    Dresult1 = rolldice()
-    Dresult2 = rolldice()
-                
-    if Dresult1 == Dresult2 and player == 1:
-        player1Sc += Dresult1+Dresult2
-        print(f"You got {Dresult1} and {Dresult2}, you get extra or less points if your 2 dice are even or odd")
-        if player1Sc % 2 == 0:
-            player1Sc += 10
-        else:
-            player1Sc -= 5
-        player1Sc += rolldice()
-
-    elif Dresult1 != Dresult1 and player == 1:
-        player1Sc += Dresult1+Dresult2
-        print(f"You got {Dresult1} and {Dresult2}, you get extra or less points if your 2 dice are even or odd")
-        if player1Score % 2 == 0:
-            player1Sc += 10
-        else:
-            player1Sc -= 5
-
-    if Dresult1 == Dresult2 and player == 2:
-        player2Sc += Dresult1+Dresult2
-        print(f"You got {Dresult1} and {Dresult2}, you get extra or less points if your 2 dice are even or odd")
-        if player2Sc % 2 == 0:
-            player2Sc += 10
-        else:
-            player2Sc -= 5
-        player2Sc += rolldice()
-
-    elif Dresult1 != Dresult1 and player == 2:
-        player2Sc += Dresult1+Dresult2
-        print(f"You got {Dresult1} and {Dresult2}, you get extra or less points if your 2 dice are even or odd")
-        if player2Sc % 2 == 0:
-            player2Sc += 10
-        else:
-            player2Sc -= 5
+#def rolldice():
+#   return random.randint(1,6)
 
 if pt == 1:
-    for i in range(1,6):
-        
-    
-        player1Roll = input("Player 1, enter roll to roll: ")
-        player2Roll = input("Player 2, enter roll to roll: ")
 
-        if player1Roll.lower() and player2Roll.lower() == 'roll':
-
-            playerRollDice(1,player1Score,0)
-            playerRollDice(2,0,player2Score)
+    while round <= 5:
         
-        else:
-            print("error")
-            print(player1Roll)
-            print(player2Roll)
+        if player1Score or player2Score < 0:
+            if player1Score < 0:
+                print("Player 2 wins! Player 1's score went under 0")
+            elif player2Score < 0:
+                print("Player 1 wins! Player 2's score went under 0")
+            elif player2Score and player1Score < 0:
+                print("Both players' scores went beneath 0, no one wins!")
+
+        rollforp1 = input("\n\tPlayer 1, Enter Y to roll: ")
+        if rollforp1.upper() == 'Y':
+            roll1forplayer1 = random.randint(1,6)
+            roll2forplayer1 = random.randint(1,6)
+            rolltotal = roll1forplayer1 + roll2forplayer1
             
-        if i == 5:
-            a = 1
-
-if player1Score == player2Score and a==1:
-    while player1Score == player2Score:
-        print("Both players have the same score, you will now play until")
+            if rolltotal % 2 == 0:
+                print("Even number! You get 10 free points")
+                player1Score += (rolltotal+10)
+                print(f"Player 1's total: {player1Score}")
+            
+            elif rolltotal % 2 != 0:
+                print("You rolled an even number, you lose 5 points!")
+                player1Score += (rolltotal - 5)
+            
+            if roll1forplayer1== roll2forplayer1:
+                print("You rolled a double! You now get an extra roll of one dice!")
+                extraroll = random.randint(1,6)
+        
+        rollforp2 = input("\n\tPlayer 1, Enter Y to roll: ")
+        if rollforp2.upper() == 'Y':
+            roll1forplayer2 = random.randint(1,6)
+            roll2forplayer2 = random.randint(1,6)
+            rolltotal2 = roll1forplayer2 + roll2forplayer2
+            
+            if rolltotal2 % 2 == 0:
+                print("Even number! You get 10 free points")
+                player1Score += (rolltotal2+10)
+                print(f"Player 1's total: {player1Score}")
+            
+            elif rolltotal2 % 2 != 0:
+                print("You rolled an even number, you lose 5 points!")
+                player1Score += (rolltotal2 - 5)
+            
+            if roll1forplayer2== roll2forplayer2:
+                print("You rolled a double! You now get an extra roll of one dice!")
+                extraroll = random.randint(1,6)
