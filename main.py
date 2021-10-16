@@ -1,4 +1,5 @@
 #dice game
+#If you use this, make sure to get a password.txt file which contains your password in the same directory
 import random
 
 password = input("Enter your password here: ")
