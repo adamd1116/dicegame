@@ -24,17 +24,6 @@ if pt == 1:
         print("\n\t----------------------")
         print(f"\tRound {round}")
         print("\t----------------------")
-        
-        if player1Score or player2Score < 0:
-            if player1Score < 0:
-                print("\n\t----------------------")
-                print("\n\tPlayer 2 wins! Player 1's score went under 0")
-            elif player2Score < 0:
-                print("\n\t----------------------")
-                print("\n\tPlayer 1 wins! Player 2's score went under 0")
-            elif player2Score and player1Score < 0:
-                print("\n\t----------------------")
-                print("\n\tBoth players' scores went beneath 0, no one wins!")
 
         rollforp1 = input("\n\tPlayer 1, Enter Y to roll: ")
         if rollforp1.upper() == 'Y':
