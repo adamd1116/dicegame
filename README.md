@@ -1,2 +1,2 @@
-# dicegame
+# dicegame - python
 Dice game for school
