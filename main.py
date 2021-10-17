@@ -100,7 +100,6 @@ if round == 5:
     elif player1Score == player2Score:
         print("\n\tBoth players have the same score, you will each roll\n\tone dice until someone gets a higher number!")
         while True:
-            
             player1SD = roll()
             player2SD = roll()
 
