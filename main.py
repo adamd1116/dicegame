@@ -8,6 +8,9 @@ round = 0
 player1Score = 0
 player2Score = 0
 
+def roll():
+    return random.randint(1,6)
+
 with open('password.txt', 'r') as f:
     if password != f.read():
         print("Incorrect password, please try again")
@@ -27,8 +30,8 @@ if pt == 1:
 
         rollforp1 = input("\n\tPlayer 1, Enter Y to roll: ")
         if rollforp1.upper() == 'Y':
-            roll1forplayer1 = random.randint(1,6)
-            roll2forplayer1 = random.randint(1,6)
+            roll1forplayer1 = roll()
+            roll2forplayer1 = roll()
             rolltotal = roll1forplayer1 + roll2forplayer1
             
             if rolltotal % 2 == 0:
@@ -47,7 +50,7 @@ if pt == 1:
             
             if roll1forplayer1== roll2forplayer1:
                 print("\n\tYou rolled a double! You now get an extra roll of one dice!")
-                extraroll = random.randint(1,6)
+                extraroll = roll()
                 player1Score += extraroll
                 print(f"\tPlayer 1's total: {player1Score}")
         else:
@@ -58,8 +61,8 @@ if pt == 1:
         print("\n\t----------------------")
         rollforp2 = input("\n\tPlayer 2, Enter Y to roll: ")
         if rollforp2.upper() == 'Y':
-            roll1forplayer2 = random.randint(1,6)
-            roll2forplayer2 = random.randint(1,6)
+            roll1forplayer2 = roll()
+            roll2forplayer2 = roll()
             rolltotal2 = roll1forplayer2 + roll2forplayer2
             
             if rolltotal2 % 2 == 0:
@@ -78,7 +81,7 @@ if pt == 1:
             
             if roll1forplayer2== roll2forplayer2:
                 print("\n\tYou rolled a double! You now get an extra roll of one dice!")
-                extraroll2 = random.randint(1,6)
+                extraroll2 = roll()
                 player2Score += extraroll2
                 print(f"\tPlayer 2's total: {player2Score}")
         else:
@@ -97,12 +100,9 @@ if round == 5:
     elif player1Score == player2Score:
         print("\n\tBoth players have the same score, you will each roll\n\tone dice until someone gets a higher number!")
         while True:
-
-            def rollAfterDraw():
-                return random.randint(1,6)
             
-            player1SD = rollAfterDraw()
-            player2SD = rollAfterDraw()
+            player1SD = roll()
+            player2SD = roll()
 
             print(f"\n\tPlayer 1 roll: {player1SD}")
             print(f"\tPlayer 2 roll: {player2SD}")
