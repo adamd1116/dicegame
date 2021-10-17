@@ -128,7 +128,6 @@ if sS == 1 and pt == 1:
 
         if player1Score > player2Score:
             fs.write("\n\tPlayer 1 won!") 
-            fs.write("")
         elif player1Score == player2Score:
             fs.write("\n\tDraw!")
         else:
