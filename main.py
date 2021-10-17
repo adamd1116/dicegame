@@ -89,7 +89,7 @@ if round == 5:
     elif player2Score > player1Score:
         print(f"\n\tPlayer 2 wins with a score of {player2Score}")
     elif player1Score == player2Score:
-        print("\n\tBoth players have the same score, you will each roll one dice until someone gets a higher number!")
+        print("\n\tBoth players have the same score, you will each roll\n\tone dice until someone gets a higher number!")
         while True:
 
             def rollAfterDraw():
