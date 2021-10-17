@@ -22,3 +22,26 @@ Player 2 score: 47
 
 	Player 1 won!
 ------------------------
+Player 1 score: 60
+Player 2 score: 58
+
+	Player 1 won!
+------------------------
+------------------------
+Player 1 score: 16
+Player 2 score: 35
+
+	Player 2 won!
+------------------------
+------------------------
+Player 1 score: 78
+Player 2 score: 62
+
+	Player 1 won!
+------------------------
+------------------------
+Player 1 score: 56
+Player 2 score: 37
+
+	Player 1 won!
+------------------------
