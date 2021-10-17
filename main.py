@@ -54,9 +54,7 @@ if pt == 1:
                 player1Score += extraroll
                 print(f"\tPlayer 1's total: {player1Score}")
         else:
-            print("\n\tInvalid input, try again next time")
-            sS = 1
-            break
+            print("\n\tInvalid input, you lose your turn")
 
         print("\n\t----------------------")
         rollforp2 = input("\n\tPlayer 2, Enter Y to roll: ")
@@ -85,9 +83,7 @@ if pt == 1:
                 player2Score += extraroll2
                 print(f"\tPlayer 2's total: {player2Score}")
         else:
-            print("\n\tInvalid input, try again next time")
-            sS = 1
-            break
+            print("\n\tInvalid input, you lose your turn")
 
 if round == 5:
     print("\n\t----------------------")
