@@ -42,6 +42,7 @@ if pt == 1:
                 print(f"\tPlayer 1's total: {player1Score}")
                 if player1Score < 0:
                     print("\n\tPlayer 2 wins, player 1's score is less than 0")
+                    sS = 1
                     break
             
             if roll1forplayer1== roll2forplayer1:
@@ -51,6 +52,7 @@ if pt == 1:
                 print(f"\tPlayer 1's total: {player1Score}")
         else:
             print("\n\tInvalid input, try again next time")
+            sS = 1
             break
 
         print("\n\t----------------------")
@@ -71,6 +73,7 @@ if pt == 1:
                 print(f"\tPlayer 2's total: {player2Score}")
                 if player2Score < 0:
                     print("\n\tPlayer 1 wins, player 2's score is less than 0")
+                    sS = 1
                     break
             
             if roll1forplayer2== roll2forplayer2:
@@ -80,14 +83,17 @@ if pt == 1:
                 print(f"\tPlayer 2's total: {player2Score}")
         else:
             print("\n\tInvalid input, try again next time")
+            sS = 1
             break
 
 if round == 5:
     print("\n\t----------------------")
     if player1Score > player2Score:
         print(f"\n\tPlayer 1 wins with a score of {player1Score}")
+        sS = 1
     elif player2Score > player1Score:
         print(f"\n\tPlayer 2 wins with a score of {player2Score}")
+        sS = 1
     elif player1Score == player2Score:
         print("\n\tBoth players have the same score, you will each roll\n\tone dice until someone gets a higher number!")
         while True:
@@ -103,10 +109,29 @@ if round == 5:
 
             if player1SD > player2SD:
                 print("\n\tPlayer 1 wins")
+                sS = 1
+                player1Score += 10
                 break
             elif player2SD > player1SD:
                 print("\n\tPlayer 2 wins")
+                sS = 1
+                player2Score += 100
                 break
             else:
                 print("\n\tDraw, keep playing")
-#
+
+if sS == 1 and pt == 1:
+    with open('scores.txt', 'a') as fs:
+        fs.write("------------------------\n")
+        fs.write(f"Player 1 score: {player1Score}")
+        fs.write(f"\nPlayer 2 score: {player2Score}\n")
+
+        if player1Score > player2Score:
+            fs.write("\n\tPlayer 1 won!") 
+            fs.write("")
+        elif player1Score == player2Score:
+            fs.write("\n\tDraw!")
+        else:
+            fs.write("\n\tPlayer 2 won!")
+
+        fs.write("\n------------------------\n")
