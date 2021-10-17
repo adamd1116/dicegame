@@ -10,3 +10,9 @@ Player 2 score: 42
 
 	Player 2 won!
 ------------------------
+------------------------
+Player 1 score: 74
+Player 2 score: 84
+
+	Player 2 won!
+------------------------
